@@ -12,12 +12,16 @@ async function quantidadeUsuariosPorRede() {
         }
 
         // Convertendo os dados para JSON
-        const dados = await res.json()
-        
+        const dados = await res.json();
+        console.log("Dados recebidos da API:", dados);  // Adicionando log para verificar os dados
+
         // Extraindo os nomes das redes sociais e as quantidades de usuários
         const nomeDasRedes = Object.keys(dados);
         const quantidadeDeUsuarios = Object.values(dados).map(num => num.toLocaleString()); // Formatação com vírgula
         
+        console.log("Redes sociais:", nomeDasRedes);  // Verificando se os nomes das redes estão corretos
+        console.log("Quantidade de usuários:", quantidadeDeUsuarios);  // Verificando os valores de usuários
+
         // Definindo os dados do gráfico
         const data = [
             {
